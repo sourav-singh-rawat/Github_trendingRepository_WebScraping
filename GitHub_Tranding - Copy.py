@@ -48,19 +48,23 @@ def repositorys_listing(url,sheet):
         # print(no_watch[0].li.text)
         # Convert String To Int{
         temp_1 = no_watch[0].li.text.split("\n")
-        watch_value = temp_1[-3].split(" ")
+        temp_1=temp_1[-3].split(" ")
+        temp_1=temp_1[-1].split(",")
+        watch_value = "".join(temp_1)
         # }
         # for file
-        repository_watch_list.append(int(watch_value[-1]))
+        repository_watch_list.append(int(watch_value))
 
         # Repository Star
         no_star = url_souped1.findAll("a", {"class": "social-count js-social-count"})
         # Convert String To Int{
         temp_2 = no_star[0].text.split("\n")
-        star_value = temp_2[-2].split(" ")
+        temp_2 = temp_2[-2].split(" ")
+        temp_2 = temp_2[-1]..split(",")
+        star_value = "".join(temp_2)
         # }
         # for file
-        repository_star_list.append(int(star_value[-1]))
+        repository_star_list.append(int(star_value))
 
         # Repository Link
         #for file
